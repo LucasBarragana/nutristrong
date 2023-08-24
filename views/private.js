@@ -135,7 +135,6 @@ async function salvarDados() {
     });
 
     try {
-        // Substitua a URL abaixo pela URL do seu servidor/API que irá salvar os dados no MongoDB Atlas
         const response = await axios.post(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.ffottnq.mongodb.net/?retryWrites=true&w=majority`, { data });
         console.log('Treino salvo com sucesso'); 
     } catch (error) {
