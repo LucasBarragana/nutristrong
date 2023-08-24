@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento</title>
+    <link rel="stylesheet" href="/views/private.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="/views/imgs/logo.png" alt="">
+            </div>
+            <button id="toggleNavWidth">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <ul>                
+                <li>
+                    <a href="#home" class="active">
+                        <span class="icon">
+                            <ion-icon name="home-outline"></ion-icon>
+                        </span>
+                        <span class="title">Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#workouts" id="workoutsLink">
+                        <span class="icon">
+                            <ion-icon name="barbell-outline"></ion-icon>
+                        </span>
+                        <span class="title">Treinos</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#nutrition" id="nutritionLink">
+                        <span class="icon">
+                            <ion-icon name="restaurant-outline"></ion-icon>
+                        </span>
+                        <span class="title">Nutrição</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#chap">
+                        <span class="icon">
+                            <ion-icon name="chatbubbles-outline"></ion-icon>
+                        </span>
+                        <span class="title">Chat</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#blog">
+                        <span class="icon">
+                            <ion-icon name="newspaper-outline"></ion-icon>
+                        </span>
+                        <span class="title">Blog</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+    <main>
+        <div class="topbar">
+            <div class="topbar-links" >
+                <ul id="topbarLinksWorkouts">
+                    <li><a href="#">Link 5</a></li>
+                    <li><a href="#">Link 6</a></li>
+                    <li><a href="#">Link 7</a></li>
+                    <li><a href="#">Link 8</a></li>
+                </ul>
+                <ul id="topbarLinksNutrition">
+                    <li><a href="#">Link 9</a></li>
+                    <li><a href="#">Link 10</a></li>
+                    <li><a href="#">Link 11</a></li>
+                    <li><a href="#">Link 12</a></li>
+                </ul>
+            </div>
+            
+
+            <div class="user">
+                <img src="caminho-para-sua-imagem" alt="User Image" id="userImage" />
+                <div class="modal" id="userModal">
+                    <div class="modal-content">
+                        <button class="close-modal" id="closeModal">&times;</button>
+                        <!-- Últimos 3 links do nav -->
+                        <ul class="user-links">
+                            <li>
+                                <a href="#perfil">
+                                    <span class="icon">
+                                        <ion-icon name="person-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Perfil</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#settings">
+                                    <span class="icon">
+                                        <ion-icon name="settings-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Configurações</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#signout">
+                                    <span class="icon">
+                                        <ion-icon name="log-out-outline"></ion-icon>
+                                    </span>
+                                    <span class="title">Sair</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Botão de upload de imagem -->
+                        <input type="file" id="imageInput" accept="image/*">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="home" class="active">
+            <div class="content-home">
+                <h1>Bem Vindo, '@user'</h1><br>
+                <h2>A partir de agora iremos construir juntos uma melhor versão de você</h2>
+            </div>            
+        </section>
+
+        <section id="workouts">
+            <h1>Treinos determiados para sua semana:</h1>
+            <div class="cards">
+                <div class="card" id="monday">
+                    <div class="top-content">
+                        <p>Segunda-Feira</p> 
+                    <button class="toggle-button" data-form="form1">+</button>
+                    </div>
+                    <br>
+                        <form class="toggle-form" id="form1" style="display:none;">
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" required><br>
+                            <label for="descricao">Descrição:</label><br>
+                            <textarea id="descricao" name="descricao" required></textarea><br>
+                            <label for="exercicio">Exercício:</label><br>
+                            <input type="text" id="exercicio" name="exercicio" required><br>
+                            <label for="series">Séries:</label><br>
+                            <input type="number" id="series" name="series" required><br>
+                            <label for="repeticoes">Repetições:</label><br>
+                            <input type="number" id="repeticoes" name="repeticoes" required><br>
+                            <label for="peso_max">Peso Máx (kg):</label><br>
+                            <input type="number" id="peso_max" name="peso_max" required><br>
+                            <label for="repeticoes_peso_max">Repetições com Peso Máx:</label><br>
+                            <input type="number" id="repeticoes_peso_max" name="repeticoes_peso_max" required><br>
+                            <label for="data_completado">Data Completado:</label><br>
+                            <input type="date" id="data_completado" name="data_completado" required><br>
+                            <input type="submit" value="Salvar">
+                        </form>          
+                </div>
+
+                <div class="card" id="tuesday">
+                    <div class="top-content">
+                        <p>Terça-Feira</p> 
+                        <button class="toggle-button" data-form="form2">+</button>
+                    </div>
+                    
+                    <br>
+                        <form class="toggle-form" id="form2" style="display:none;">
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" required><br>
+                            <label for="descricao">Descrição:</label><br>
+                            <textarea id="descricao" name="descricao" required></textarea><br>
+                            <label for="exercicio">Exercício:</label><br>
+                            <input type="text" id="exercicio" name="exercicio" required><br>
+                            <label for="series">Séries:</label><br>
+                            <input type="number" id="series" name="series" required><br>
+                            <label for="repeticoes">Repetições:</label><br>
+                            <input type="number" id="repeticoes" name="repeticoes" required><br>
+                            <label for="peso_max">Peso Máx (kg):</label><br>
+                            <input type="number" id="peso_max" name="peso_max" required><br>
+                            <label for="repeticoes_peso_max">Repetições com Peso Máx:</label><br>
+                            <input type="number" id="repeticoes_peso_max" name="repeticoes_peso_max" required><br>
+                            <label for="data_completado">Data Completado:</label><br>
+                            <input type="date" id="data_completado" name="data_completado" required><br>
+                            <input type="submit" value="Salvar">
+                        </form>          
+                </div>
+
+                <div class="card" id="thurday">
+                    <div class="top-content">
+                        <p>Quarta-Feira</p> 
+                        <button class="toggle-button" data-form="form3">+</button>
+                    </div>
+                    <br>
+                        <form class="toggle-form" id="form3" style="display:none;">
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" required><br>
+                            <label for="descricao">Descrição:</label><br>
+                            <textarea id="descricao" name="descricao" required></textarea><br>
+                            <label for="exercicio">Exercício:</label><br>
+                            <input type="text" id="exercicio" name="exercicio" required><br>
+                            <label for="series">Séries:</label><br>
+                            <input type="number" id="series" name="series" required><br>
+                            <label for="repeticoes">Repetições:</label><br>
+                            <input type="number" id="repeticoes" name="repeticoes" required><br>
+                            <label for="peso_max">Peso Máx (kg):</label><br>
+                            <input type="number" id="peso_max" name="peso_max" required><br>
+                            <label for="repeticoes_peso_max">Repetições com Peso Máx:</label><br>
+                            <input type="number" id="repeticoes_peso_max" name="repeticoes_peso_max" required><br>
+                            <label for="data_completado">Data Completado:</label><br>
+                            <input type="date" id="data_completado" name="data_completado" required><br>
+                            <input type="submit" value="Salvar">
+                        </form>          
+                </div>
+
+                <div class="card" id="wednesday">
+                    <div class="top-content">
+                        <p>Quinta-Feira</p> 
+                        <button class="toggle-button" data-form="form4">+</button>
+                    </div>
+                    <br>
+                        <form class="toggle-form" id="form4" style="display:none;">
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" required><br>
+                            <label for="descricao">Descrição:</label><br>
+                            <textarea id="descricao" name="descricao" required></textarea><br>
+                            <label for="exercicio">Exercício:</label><br>
+                            <input type="text" id="exercicio" name="exercicio" required><br>
+                            <label for="series">Séries:</label><br>
+                            <input type="number" id="series" name="series" required><br>
+                            <label for="repeticoes">Repetições:</label><br>
+                            <input type="number" id="repeticoes" name="repeticoes" required><br>
+                            <label for="peso_max">Peso Máx (kg):</label><br>
+                            <input type="number" id="peso_max" name="peso_max" required><br>
+                            <label for="repeticoes_peso_max">Repetições com Peso Máx:</label><br>
+                            <input type="number" id="repeticoes_peso_max" name="repeticoes_peso_max" required><br>
+                            <label for="data_completado">Data Completado:</label><br>
+                            <input type="date" id="data_completado" name="data_completado" required><br>
+                            <input type="submit" value="Salvar">
+                        </form>          
+                </div>
+
+                <div class="card" id="friday">
+                    <div class="top-content">
+                        <p>Sexta-Feira</p> 
+                        <button class="toggle-button" data-form="form5">+</button>
+                    </div>
+                    
+                    <br>
+                        <form class="toggle-form" id="form5" style="display:none;">
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" required><br>
+                            <label for="descricao">Descrição:</label><br>
+                            <textarea id="descricao" name="descricao" required></textarea><br>
+                            <label for="exercicio">Exercício:</label><br>
+                            <input type="text" id="exercicio" name="exercicio" required><br>
+                            <label for="series">Séries:</label><br>
+                            <input type="number" id="series" name="series" required><br>
+                            <label for="repeticoes">Repetições:</label><br>
+                            <input type="number" id="repeticoes" name="repeticoes" required><br>
+                            <label for="peso_max">Peso Máx (kg):</label><br>
+                            <input type="number" id="peso_max" name="peso_max" required><br>
+                            <label for="repeticoes_peso_max">Repetições com Peso Máx:</label><br>
+                            <input type="number" id="repeticoes_peso_max" name="repeticoes_peso_max" required><br>
+                            <label for="data_completado">Data Completado:</label><br>
+                            <input type="date" id="data_completado" name="data_completado" required><br>
+                            <input type="submit" value="Salvar">
+                        </form>          
+                </div>
+
+                <div class="card" id="saturday">
+                    <div class="top-content">
+                        <p>Sabado</p> 
+                    <button class="toggle-button" data-form="form6">+</button>
+                    </div>                    
+                    <br>
+                        <form class="toggle-form" id="form6" style="display:none;">
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" required><br>
+                            <label for="descricao">Descrição:</label><br>
+                            <textarea id="descricao" name="descricao" required></textarea><br>
+                            <label for="exercicio">Exercício:</label><br>
+                            <input type="text" id="exercicio" name="exercicio" required><br>
+                            <label for="series">Séries:</label><br>
+                            <input type="number" id="series" name="series" required><br>
+                            <label for="repeticoes">Repetições:</label><br>
+                            <input type="number" id="repeticoes" name="repeticoes" required><br>
+                            <label for="peso_max">Peso Máx (kg):</label><br>
+                            <input type="number" id="peso_max" name="peso_max" required><br>
+                            <label for="repeticoes_peso_max">Repetições com Peso Máx:</label><br>
+                            <input type="number" id="repeticoes_peso_max" name="repeticoes_peso_max" required><br>
+                            <label for="data_completado">Data Completado:</label><br>
+                            <input type="date" id="data_completado" name="data_completado" required><br>
+                            <input type="submit" value="Salvar">
+                        </form>          
+                </div>
+
+                <div class="card" id="sunday">
+                    <div class="top-content">
+                        <p>Domingo</p> 
+                        <button class="toggle-button" data-form="form7">+</button>
+                    </div>                    
+                    <br>
+                        <form class="toggle-form" id="form7" style="display:none;">
+                            <label for="nome">Nome:</label><br>
+                            <input type="text" id="nome" name="nome" required><br>
+                            <label for="descricao">Descrição:</label><br>
+                            <textarea id="descricao" name="descricao" required></textarea><br>
+                            <label for="exercicio">Exercício:</label><br>
+                            <input type="text" id="exercicio" name="exercicio" required><br>
+                            <label for="series">Séries:</label><br>
+                            <input type="number" id="series" name="series" required><br>
+                            <label for="repeticoes">Repetições:</label><br>
+                            <input type="number" id="repeticoes" name="repeticoes" required><br>
+                            <label for="peso_max">Peso Máx (kg):</label><br>
+                            <input type="number" id="peso_max" name="peso_max" required><br>
+                            <label for="repeticoes_peso_max">Repetições com Peso Máx:</label><br>
+                            <input type="number" id="repeticoes_peso_max" name="repeticoes_peso_max" required><br>
+                            <label for="data_completado">Data Completado:</label><br>
+                            <input type="date" id="data_completado" name="data_completado" required><br>
+                            <input type="submit" value="Salvar">
+                        </form>          
+                </div>
+            </div>
+        </section>
+
+        <section id="nutrition">
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="numbers">20</div>
+                        <div class="cardName">Dias de projeto</div>
+                    </div>
+
+                    <div class="iconBx">
+                        <ion-icon name="calendar-outline"></ion-icon>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">80kg</div>
+                        <div class="cardName">Peso atual</div>
+                    </div>        
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">21,3%</div>
+                        <div class="cardName">Massa magra</div>
+                    </div>        
+                </div>
+
+                <div class="card">
+                    <div>
+                        <div class="numbers">25,9%</div>
+                        <div class="cardName">Gordura</div>
+                    </div>        
+                </div>
+            </div>
+
+            <div class="details">
+                <div class="recentOrders">
+                    <div class="cardHeader">
+                        <h2>Avaliações Corporais</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Peso(kg)</td>
+                                <td>% Gordura</td>
+                                <td>% Massa</td>
+                                <td>Data</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+
+                            <tr>
+                                <td><input type="text" placeholder="Peso atual"></td>
+                                <td><input type="number" placeholder="% de gordura atual"></td>
+                                <td><input type="number" placeholder="% de massa magra"></td>
+                                <td><input type="date" placeholder="Data da medição"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>       
+        </section>
+
+        <section id="progress">
+            <h1>Uma parte principal do processo é observar sua evolução.<br> Rever e analisar os resultados para manter um melhor progresso.</h1>
+        </section>
+    </main>
+
+    <footer>
+        Direitos Reservados @LucasBarragana
+    </footer>
+
+    <script src="/views/private.js"></script>
+    <!-- ====== ionicons ======= -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
